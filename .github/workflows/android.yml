@@ -3,7 +3,8 @@ name: Build SalahWatch APK
 on:
   push:
     branches: [ main, master ]
-  pull_request:
+    paths:
+      - 'SalahWatch.zip'
   workflow_dispatch:
 
 permissions:
@@ -14,8 +15,16 @@ jobs:
     name: Build Wear OS debug APK
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source
+      - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Extract SalahWatch project
+        run: |
+          test -f SalahWatch.zip
+          mkdir -p /tmp/salahwatch-src
+          unzip -q SalahWatch.zip -d /tmp/salahwatch-src
+          test -f /tmp/salahwatch-src/SalahWatch/settings.gradle.kts
+          cp -a /tmp/salahwatch-src/SalahWatch/. .
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
