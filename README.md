@@ -14,7 +14,7 @@
 3. `Build → Build APK(s)` → plik w `app/build/outputs/apk/debug/app-debug.apk`.
    (albo w terminalu: `./gradlew assembleDebug`)
 
-## Wgranie na Xiaomi Watch 2 Pro (ADB przez Wi‑Fi)
+## Wgranie na Smartwatch'a (ADB przez Wi‑Fi)
 1. Zegarek: **Ustawienia → System → Informacje → Wersje** → stuknij 7× w *Numer kompilacji* → włączone Opcje programisty.
 2. **Ustawienia → Opcje programisty** → włącz *Debugowanie ADB* i *Debugowanie bezprzewodowe*. Zegarek i komputer w tej samej sieci Wi‑Fi.
 3. W *Debugowaniu bezprzewodowym* → *Sparuj nowe urządzenie* → pokaże IP:port i kod.
